@@ -1,8 +1,9 @@
 from collections.abc import Callable
 from typing import Any
 
-class Tool():
-    def __init__(self, name:str, description:str, arguments:dict, func:Callable):
+
+class Tool:
+    def __init__(self, name: str, description: str, arguments: dict, func: Callable):
         self.name = name
         self.description = description
         self.arguments = arguments

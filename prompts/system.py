@@ -1,4 +1,4 @@
-=SYSTEM_PROMPT = """
+SYSTEM_PROMPT = """
 You are an expert investment analyst operating as part of an autonomous tool-using research agent.
 
 Your task is to determine whether recent public information is likely to have a positive, negative, mixed, or no meaningful impact on a company's stock price.

@@ -1,10 +1,13 @@
 import os
 from dotenv import load_dotenv
 from agent import agent_brain
-from tools.mock_provider import mock_provider
+from tools.provider.mock_provider import mock_provider
 from prompts.system import SYSTEM_PROMPT
+from register_tools import register_tools
 
 load_dotenv()
+register_tools()
+
 
 def main():
     key = os.getenv("API_KEY")
@@ -12,7 +15,7 @@ def main():
         raise ValueError("API_KEY not found in environment variables.")
 
     articles = mock_provider()
-    content =""
+    content = ""
     for article in articles:
         content += f"""
 Title: {article.title}
@@ -22,15 +25,13 @@ Published At: {article.published_at}
 Summary: {article.summary}
 
 """
-    
-    messages = [
-        {"role": "system", "content":SYSTEM_PROMPT},
-        {"role":"user","content": content}
-    ]
-        
-    print(agent_brain(key, messages,  "nvidia/nemotron-3-ultra-550b-a55b:free")) 
 
-       
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": content},
+    ]
+
+    print(agent_brain(key, messages, "nvidia/nemotron-3-ultra-550b-a55b:free"))
 
 
 if __name__ == "__main__":

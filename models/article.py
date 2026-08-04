@@ -1,5 +1,13 @@
-class article: 
-    def __init__(self,title:str, url:str,source:str,published_at:str,summary:str,provider:str):
+class article:
+    def __init__(
+        self,
+        title: str,
+        url: str,
+        source: str,
+        published_at: str,
+        summary: str,
+        provider: str,
+    ):
         self.title = title
         self.url = url
         self.source = source

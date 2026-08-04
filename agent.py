@@ -7,8 +7,6 @@ def agent_brain(
     model: str = "~openai/gpt-latest",
 ) -> str:
 
-
-
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
