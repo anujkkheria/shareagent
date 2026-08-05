@@ -4,7 +4,8 @@ from tools.mock_tool import mock_tool
 
 
 def register_tools():
-    ToolRegistry().register_tool(
+    tools_regitry = ToolRegistry()  
+    tools_regitry.register_tool(
         Tool(
             "mock_tool",
             "This is a mock tool for testing and development purposes.",
@@ -12,3 +13,5 @@ def register_tools():
             mock_tool,
         )
     )
+
+    return tools_regitry
